@@ -1,0 +1,53 @@
+@import '../styles/typography.scss';
+@import '../styles/mixins.scss';
+
+.root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  .background {
+    cursor: default;
+    height: 100%;
+    position: absolute;
+    user-select: none;
+    width: 100%;
+
+    .copy {
+      @include font-style(huge);
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: 0;
+      word-spacing: -0.5em;
+      white-space: nowrap;
+
+      .title {
+        opacity: 0.05;
+      }
+
+      .name {
+        opacity: 0.04;
+        color: #ff0;
+      }
+    }
+  }
+
+  .imageContainer {
+    background-color: #212121;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    z-index: 10;
+
+    .image {
+      filter: grayscale(1);
+      opacity: 0.75;
+      width: 400px;
+    }
+  }
+}

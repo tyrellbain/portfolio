@@ -1,0 +1,129 @@
+@import './mixins.scss';
+
+@mixin font-style($element) {
+  $mobile: map-get($typography-system, mobile);
+  $tablet: map-get($typography-system, tablet);
+  $desktopSm: map-get($typography-system, desktopSm);
+
+  @if (map-has-key($mobile, $element)) {
+    @include font-set(map-get($mobile, $element) ...);
+  }
+
+  @if (map-has-key($tablet, $element)) {
+    @include layout(tablet) {
+      @include font-set(map-get($tablet, $element) ...);
+    }
+  }
+
+  @if (map-has-key($desktopSm, $element)) {
+    @include layout(desktopSm) {
+      @include font-set(map-get($desktopSm, $element) ...);
+    }
+  }
+}
+
+@mixin font-set($font-name, $font-size, $font-weight: normal, $letter-spacing: normal, $line-height: 1.2) {
+  font-family: $font-name;
+  font-size: px($font-size);
+  font-weight: $font-weight;
+  @if $letter-spacing == normal {
+    letter-spacing: $letter-spacing;
+  } @else {
+    letter-spacing: px($letter-spacing);
+  }
+  line-height: $line-height;
+}
+
+@function line-height($font-size, $line-height) {
+  @return $line-height / $font-size;
+}
+
+$typography-system: (
+  mobile: (
+    huge: (
+      'RubikMonoOne',
+      42,
+      900,
+    ),
+    h1: (
+      'Rubik',
+      36,
+      600,
+      normal,
+      1,
+    ),
+    h2: (
+      'Rubik',
+      28,
+      600,
+    ),
+    h3: (
+      'OpenSans',
+      20,
+      600,
+    ),
+    p1: (
+      'OpenSans',
+      20,
+      400,
+    ),
+    p2: (
+      'OpenSans',
+      10,
+      300,
+    ),
+    eyebrow: (
+      'OpenSans',
+      8,
+      300,
+    ),
+  ),
+  tablet: (
+    huge: (
+      'RubikMonoOne',
+      58,
+      900,
+      -3,
+      0.8,
+    ),
+    h1: (
+      'Rubik',
+      58,
+      600,
+      normal,
+    ),
+    h2: (
+      'Rubik',
+      48,
+      600,
+    ),
+    h3: (
+      'OpenSans',
+      32,
+      600,
+    ),
+    p1: (
+      'OpenSans',
+      24,
+      400,
+    ),
+    p2: (
+      'OpenSans',
+      8,
+      300,
+      0.9,
+    ),
+    eyebrow: (
+      'OpenSans',
+      10,
+      300,
+    ),
+  ),
+  desktopSm: (
+    breadcrumb: (
+      'OpenSans',
+      14,
+      19,
+    ),
+  ),
+);

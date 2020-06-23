@@ -1,0 +1,20 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.root {
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  padding: $layout-margin-mobile;
+  position: fixed;
+  width: 100%;
+  @include layout('tablet') {
+    padding: $layout-margin-tablet;
+  }
+  @include layout('desktopSm') {
+    padding: $layout-margin-desktop;
+  }
+}

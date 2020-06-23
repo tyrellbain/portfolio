@@ -1,0 +1,20 @@
+{
+  "works": [
+    {
+      "name": "Oculus",
+      "slug": "oculus"
+    },
+    {
+      "name": "Legin Knits",
+      "slug": "legin-knits"
+    },
+    {
+      "name": "Wildflowers",
+      "slug": "wildflowers"
+    },
+    {
+      "name": "Bremont",
+      "slug": "bremont"
+    }
+  ]
+}

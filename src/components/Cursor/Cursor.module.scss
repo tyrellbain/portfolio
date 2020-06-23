@@ -1,0 +1,63 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+
+.root {
+  @include transform-center;
+  border: 3px solid $dark-gray;
+  border-radius: 50%;
+  height: 30px;
+  opacity: 0.75;
+  pointer-events: none;
+  position: absolute;
+  transition-duration: 0.5s;
+  transition-property: width, height, border;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  width: 30px;
+  z-index: $zindex-cursor;
+
+  &.button {
+    background-color: $dark-gray;
+    transition-property: background-color, width, height, border;
+    height: 100px;
+    width: 100px;
+
+    &.hideDot {
+      .inner {
+        opacity: 0;
+      }
+    }
+  }
+
+  .inner {
+    @include transform-center;
+    background-color: #ff0;
+    opacity: 0.5;
+    border-radius: 50%;
+    height: 5px;
+    position: absolute;
+    transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    width: 5px;
+  }
+
+  .status {
+    @include transform-center;
+    animation: fade-in 0.5s forwards;
+    font-size: 12px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,64 @@
+@import 'vars.scss';
+@import 'fonts.scss';
+
+html {
+  background-color: $background-grey;
+  box-sizing: border-box;
+  color: $white;
+  // cursor: none;
+  -webkit-overflow-scrolling: touch;
+
+  * {
+    // cursor: none;
+  }
+}
+
+body {
+  font-family: 'OpenSans';
+  font-weight: 700;
+  font-size: 16px;
+  // height: 100%;
+  // min-height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: fixed;
+  width: 100%;
+  word-break: keep-all;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+}

@@ -1,0 +1,17 @@
+.root {
+  cursor: pointer;
+  outline: none;
+
+  &.block {
+    display: block;
+  }
+
+  &.inline {
+    display: inline;
+    &::before,
+    &::after {
+      display: inline;
+      content: ' ';
+    }
+  }
+}

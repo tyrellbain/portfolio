@@ -1,0 +1,63 @@
+@import '../styles/vars.scss';
+@import '../styles/typography.scss';
+
+// .root {
+
+//   display: flex;
+//   position: fixed;
+//   height: 100%;
+//   min-height: 100vh;
+//   min-width: 100vw;
+//   width: 100%;
+// }
+
+.logo {
+  left: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 45px;
+  z-index: $zindex-overlay;
+}
+
+.pageName {
+  @include font-style(p2);
+  color: $light-gray;
+  // opacity: 0.15;
+  position: absolute;
+  right: 40px;
+  text-orientation: mixed;
+  top: 50%;
+  transform: translate(50%, -50%);
+  writing-mode: vertical-rl;
+
+  &::before {
+    background-color: $light-gray;
+    content: '';
+    display: inline-block;
+    margin-bottom: 10px;
+    height: 25px;
+    width: 1px;
+  }
+}
+
+.navigationChevron {
+  @include font-style(p2);
+  color: $light-gray;
+  bottom: px(25);
+  // opacity: 0.15;
+  position: absolute;
+  transform: translateY(50%);
+
+  &.prev {
+    left: px(50);
+  }
+
+  &.next {
+    right: px(50);
+
+    &.show {
+      background-color: #f00;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/vars.scss';
+
+.root {
+  background: none;
+  border: none;
+  box-sizing: content-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: px(20);
+  justify-content: space-evenly;
+  left: px(25);
+  outline: none;
+  position: absolute;
+  top: px(12.5);
+  transform: translateX(-50%);
+  width: px(20);
+  z-index: $zindex-menu;
+
+  &.isOpen {
+    background: #f00;
+    .bar {
+      transition: all 2s ease;
+
+      &.top {
+        transform: rotate(45deg) translateX(2px);
+      }
+      &.middle {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      &.bottom {
+        transform: rotate(-45deg) translateX(2px);
+      }
+    }
+  }
+
+  .bar {
+    background-color: $dark-gray;
+    height: px(2.5);
+    width: px(20);
+    transform-origin: left;
+  }
+}

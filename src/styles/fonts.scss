@@ -1,0 +1,71 @@
+$base-path: '../assets/fonts/';
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('#{$base-path}OpenSans/OpenSans-Light.woff2') format('woff2'),
+    url('#{$base-path}OpenSans/OpenSans-Light.woff') format('woff'),
+    url('#{$base-path}OpenSans/OpenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('#{$base-path}OpenSans/OpenSans-Regular.woff2') format('woff2'),
+    url('#{$base-path}OpenSans/OpenSans-Regular.woff') format('woff'),
+    url('#{$base-path}OpenSans/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('#{$base-path}OpenSans/OpenSans-SemiBold.woff2') format('woff2'),
+    url('#{$base-path}OpenSans/OpenSans-SemiBold.woff') format('woff'),
+    url('#{$base-path}OpenSans/OpenSans-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('#{$base-path}OpenSans/OpenSans-Bold.woff2') format('woff2'),
+    url('#{$base-path}OpenSans/OpenSans-Bold.woff') format('woff'),
+    url('#{$base-path}OpenSans/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('#{$base-path}Rubik/Rubik-Bold.woff2') format('woff2'),
+    url('#{$base-path}Rubik/Rubik-Bold.woff') format('woff'),
+    url('#{$base-path}Rubik/Rubik-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('#{$base-path}Rubik/Rubik-Black.woff2') format('woff2'),
+    url('#{$base-path}Rubik/Rubik-Black.woff') format('woff'),
+    url('#{$base-path}Rubik/Rubik-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'RubikMonoOne';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('#{$base-path}RubikMonoOne/RubikMonoOne.woff2') format('woff2'),
+    url('#{$base-path}RubikMonoOne/RubikMonoOne.woff') format('woff'),
+    url('#{$base-path}RubikMonoOne/RubikMonoOne.ttf') format('truetype');
+}

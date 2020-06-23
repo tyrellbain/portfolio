@@ -1,0 +1,63 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/typography.scss';
+
+.root {
+  animation: fade-in 1s forwards;
+  background-color: $background-grey;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: $zindex-overlay;
+
+  .container {
+    @include transform-center;
+    display: flex;
+    flex-direction: column;
+    height: 85%;
+    justify-content: space-evenly;
+    max-height: px(400);
+    position: absolute;
+    // @include layout('tablet') {
+    //   flex-direction: row;
+    //   flex-wrap: nowrap;
+    // }
+
+    .item {
+      @include font-style(huge);
+      display: flex;
+      flex-direction: row;
+      //   flex-grow: 1;
+      position: relative;
+      width: 100%;
+      //   @include layout('tablet') {
+      //     flex-direction: column;
+      //   }
+
+      &:not(:last-child) {
+        margin-right: px(64);
+      }
+      .link {
+        color: $white;
+
+        .pageCount {
+          @include font-style(eyebrow);
+          position: absolute;
+          transform: rotate(90deg);
+          top: px(8);
+        }
+      }
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

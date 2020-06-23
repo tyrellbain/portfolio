@@ -1,0 +1,20 @@
+@import './mixins.scss';
+
+// ***************************
+// Colors
+// ***************************
+$background-grey: #161616;
+
+$dark-gray: #353535;
+$light-gray: #545454;
+$white: #e2e2e2;
+
+// ***************************
+// Layout
+// ***************************
+$layout-margin-mobile: px(12.5);
+$layout-margin-tablet: px(31.25);
+$layout-margin-desktop: px(50);
+$zindex-overlay: 50;
+$zindex-menu: 60;
+$zindex-cursor: 70;
