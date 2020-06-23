@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
           </Link>
         </CursorTrigger>
         <h2 className={classnames(styles.pageName)}>{pageName?.name}</h2>
-        {menuOpen ? <Menu onClick={() => setMenuOpen(!menuOpen)} data-cursor="Menu" /> : null}
+        {menuOpen ? <Menu onClick={() => setMenuOpen(!menuOpen)} /> : null}
         <AppContext.Provider value={{ showNextButton, setShowNextButton }}>
           <Layout>
             <Component {...pageProps} />
