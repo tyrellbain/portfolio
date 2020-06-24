@@ -8,10 +8,6 @@ import styles from './Menu.module.scss';
 import useMousePosition from '../../hooks/useMousePosition';
 
 function Menu({ onClick }) {
-  const position = useMousePosition();
-  const leftPosition = Math.abs(position.xPercent - 100);
-  const topPosition = -((position.yPercent - 50) / 50) * 10 + 50;
-
   return (
     <div className={classnames(styles.root)}>
       <div className={classnames(styles.container)}>

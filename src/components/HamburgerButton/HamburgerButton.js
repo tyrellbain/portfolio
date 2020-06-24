@@ -1,12 +1,17 @@
+import React, { useEffect, useState } from 'react';
 import CursorTrigger from '../CursorTrigger/CursorTrigger';
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import classnames from 'classnames';
 import styles from './HamburgerButton.module.scss';
 
 function HamburgerButton({ onClick, isOpen }) {
-  const cursorMsg = isOpen ? 'Close' : 'See More...';
+  const [cursorMsg, setCursorMsg] = useState('See More');
+
+  useEffect(() => {
+    setCursorMsg(isOpen ? 'Close' : 'See More...');
+  }, [isOpen]);
+
   return (
     <CursorTrigger message={cursorMsg}>
       <button className={classnames(styles.root, { [styles.isOpen]: isOpen })} onClick={onClick}>

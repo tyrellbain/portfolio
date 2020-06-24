@@ -5,11 +5,11 @@ html {
   background-color: $background-grey;
   box-sizing: border-box;
   color: $white;
-  // cursor: none;
+  cursor: none;
   -webkit-overflow-scrolling: touch;
 
   * {
-    // cursor: none;
+    cursor: none;
   }
 }
 

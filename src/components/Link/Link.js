@@ -31,7 +31,7 @@ function Link({ className, children, display, href, message, onClick }) {
   const mouseLeave = useCallback(
     (e) => {
       setHoveringOnTrigger(false);
-      setTriggerMessage('');
+      message && setTriggerMessage('');
     },
     [setHoveringOnTrigger, setTriggerMessage]
   );
