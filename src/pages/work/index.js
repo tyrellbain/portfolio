@@ -39,17 +39,30 @@ function Work() {
 
   return (
     <div className={classnames(styles.root)}>
-      <div className={classnames(styles.container)} style={{ transform: `translateY(-${(activeSlide - 1) * 100}%)` }}>
-        {works.map((work) => (
-          <section className={classnames(styles.project)} key={work.name}>
+      <div className={classnames(styles.container)}>
+        {works.map((work, i) => (
+          <section
+            className={classnames(styles.project, { [styles.activeProject]: activeSlide === i + 1 })}
+            key={work.name}
+          >
             <div className={classnames(styles.content)}>
-              <h2>{work.name}</h2>
-              <p>{work.description}</p>
-              <span>{work.role}/</span>
-              <span>{work.year}</span>
+              <h2>
+                <span className={classnames(styles.transitionElement, styles.transitionText)}>{work.name}</span>
+              </h2>
+              <p>
+                <span className={classnames(styles.transitionElement, styles.transitionText)}>{work.description}</span>
+              </p>
+              <span>
+                <span className={classnames(styles.transitionElement, styles.transitionText)}>{work.role}/</span>
+              </span>
+              <span>
+                <span className={classnames(styles.transitionElement, styles.transitionText)}>{work.year}</span>
+              </span>
             </div>
             <div className={classnames(styles.imgContainer)}>
-              <img src={work.image} />
+              <div className={classnames(styles.transitionElement, styles.transitionImage)}>
+                <img src={work.image} />
+              </div>
             </div>
           </section>
         ))}
