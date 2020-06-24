@@ -6,6 +6,7 @@ html {
   box-sizing: border-box;
   color: $white;
   cursor: none;
+  overflow: hidden;
   -webkit-overflow-scrolling: touch;
 
   * {
@@ -26,7 +27,7 @@ body {
   min-width: 100vw;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   position: fixed;
   width: 100%;
   word-break: keep-all;

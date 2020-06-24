@@ -1,0 +1,48 @@
+@import '../../styles/vars.scss';
+@import '../../styles/typography.scss';
+
+.root {
+  height: calc(100vh - 2 * #{$layout-margin-mobile});
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  @include layout('tablet') {
+    height: calc(100vh - 2 * #{$layout-margin-tablet});
+  }
+  @include layout('desktopSm') {
+    height: calc(100vh - 2 * #{$layout-margin-desktop});
+  }
+
+  .container {
+    height: 100%;
+    width: 100%;
+
+    .project {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      justify-content: space-evenly;
+
+      .content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .imgContainer {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        max-width: 33%;
+      }
+    }
+  }
+
+  .slideCount {
+    @include font-style('h2');
+    bottom: 80px;
+    color: $dark-gray;
+    position: fixed;
+  }
+}
