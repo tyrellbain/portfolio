@@ -13,23 +13,36 @@ function About() {
           <img className={classnames(styles.image)} src="/images/about.jpg" />
         </div>
         <div className={classnames(styles.content)}>
-          <div className={classnames(styles.aboutWork)}>
-            Hi! I'm Tyrell a Toronto based Full-Stack Developer. Currently working at
+          <div className={classnames(styles.section, styles.aboutWork)}>
+            Hi! I'm Tyrell a Toronto based Full-Stack Developer currently working at
             <Link href="https://www.jam3.com/" message="Where I work">
               Jam3
             </Link>
+            in Toronto, Canada. I've had the chance to work on a diverse set of projects from local business to global
+            brands.
           </div>
-          <div className={classnames(styles.aboutPersonal)}>
-            I’m Tyrell, a coffee-drinking, bicycle riding, burrito loving full-stack web developer from Toronto. Most
-            recently, I can be found bouncing between front and back-end development, crafting custom Wordpress themes
-            to fit my clients' every need. I enjoy collaborating with a team of talented web designers and developers to
-            take complex ideas and bring them to life in fully responsive environments online.
+          <div className={classnames(styles.section, styles.aboutPersonal)}>
+            In my freetime I can be found coding, biking, baking or brewing beer.
           </div>
-          <div>
-            I’m Tyrell, a coffee-drinking, bicycle riding, burrito loving full-stack web developer from Toronto. Most
-            recently, I can be found bouncing between front and back-end development, crafting custom Wordpress themes
-            to fit my clients' every need. I enjoy collaborating with a team of talented web designers and developers to
-            take complex ideas and bring them to life in fully responsive environments online.
+          <div className={classnames(styles.section, styles.aboutLists)}>
+            <div className={classnames(styles.social)}>
+              <h3 className={classnames(styles.subheading)}>Socials</h3>
+              <ul>
+                <li className={classnames(styles.listItem)}>
+                  <Link href="https://www.instagram.com/tyrellbain/">Instagram</Link>
+                </li>
+                <li className={classnames(styles.listItem)}>
+                  <Link href="https://ca.linkedin.com/in/tyrell-bain-161634110">LinkedIn</Link>
+                </li>
+                <li className={classnames(styles.listItem)}>
+                  <Link href="https://github.com/tyrellbain">GitHub</Link>
+                </li>
+              </ul>
+            </div>
+            <div className={classnames(styles.contact)}>
+              <h3 className={classnames(styles.subheading)}>Contact</h3>
+              <p>contact@tyrellbain.com</p>
+            </div>
           </div>
         </div>
       </div>

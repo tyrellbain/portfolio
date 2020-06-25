@@ -1,8 +1,9 @@
 @import '../../styles/vars.scss';
 @import '../../styles/mixins.scss';
+@import '../../styles/typography.scss';
 
 .root {
-  font-size: 36px;
+  // font-size: 36px;
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -10,8 +11,12 @@
   width: 100%;
 
   .container {
+    align-items: center;
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     position: absolute;
+    width: 100%;
 
     .imgContainer {
       box-sizing: border-box;
@@ -40,7 +45,43 @@
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
+      max-width: px(375);
       padding: px(10) px(25);
+
+      .section {
+        margin-bottom: px(20);
+
+        &:last-child {
+          padding-bottom: $layout-margin-desktop;
+        }
+      }
+
+      .aboutWork,
+      .aboutPersonal {
+        @include font-style('p1');
+      }
+
+      .aboutLists {
+        display: flex;
+
+        .social {
+          margin-right: px(20);
+
+          .listItem {
+            @include font-style('p2');
+            margin-bottom: px(3);
+          }
+        }
+
+        .contact {
+          @include font-style('p2');
+        }
+
+        .subheading {
+          @include font-style('h3');
+          margin-bottom: px(10);
+        }
+      }
     }
   }
 }

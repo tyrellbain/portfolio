@@ -14,69 +14,6 @@
     height: calc(100vh - 2 * #{$layout-margin-desktop});
   }
 
-  .container {
-    height: 100%;
-    width: 100%;
-
-    .project {
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      height: 100%;
-      justify-content: space-evenly;
-      position: absolute;
-      width: 100%;
-
-      .transitionElement {
-        display: block;
-        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
-
-      .content {
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        max-width: 500px;
-
-        > * {
-          overflow: hidden;
-        }
-
-        .transitionText {
-          opacity: 0;
-          transform: translateY(100%);
-        }
-      }
-
-      .imgContainer {
-        display: flex;
-        flex-direction: column;
-        max-width: 33%;
-        overflow: hidden;
-        width: 300px;
-
-        .transitionImage {
-          opacity: 0;
-          transform: translateY(100%);
-        }
-      }
-
-      &.activeProject {
-        .transitionText {
-          opacity: 1;
-          transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-          transform: translateY(0%);
-        }
-
-        .transitionImage {
-          opacity: 1;
-          transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-          transform: translateY(0%);
-        }
-      }
-    }
-  }
-
   .slideCount {
     @include font-style('h2');
     bottom: 80px;

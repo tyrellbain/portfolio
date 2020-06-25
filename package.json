@@ -11,6 +11,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "animejs": "^3.2.0",
     "classnames": "^2.2.6",
     "colorthief": "^2.3.0",
     "lodash.debounce": "^4.0.8",

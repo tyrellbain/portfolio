@@ -22,7 +22,7 @@
   }
 }
 
-@mixin font-set($font-name, $font-size, $font-weight: normal, $letter-spacing: normal, $line-height: 1.2) {
+@mixin font-set($font-name, $font-size, $font-weight: normal, $letter-spacing: normal, $line-height: 1.333) {
   font-family: $font-name;
   font-size: px($font-size);
   font-weight: $font-weight;
@@ -59,22 +59,24 @@ $typography-system: (
     ),
     h3: (
       'OpenSans',
-      20,
+      12,
       600,
     ),
     p1: (
       'OpenSans',
-      20,
+      8,
       400,
     ),
     p2: (
       'OpenSans',
       10,
       300,
+      'normal',
+      20,
     ),
     eyebrow: (
       'OpenSans',
-      8,
+      6,
       300,
     ),
   ),
@@ -99,12 +101,12 @@ $typography-system: (
     ),
     h3: (
       'OpenSans',
-      32,
-      600,
+      20,
+      700,
     ),
     p1: (
       'OpenSans',
-      24,
+      10,
       400,
     ),
     p2: (
@@ -115,7 +117,7 @@ $typography-system: (
     ),
     eyebrow: (
       'OpenSans',
-      10,
+      8,
       300,
     ),
   ),

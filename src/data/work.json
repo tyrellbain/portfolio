@@ -3,28 +3,32 @@
     {
       "name": "Oculus",
       "role": "Full Stack",
-      "year": "2019",
+      "year": 2019,
+      "link": "http://www.google.com",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat egestas eleifend.",
       "image": "/images/vector-01.svg"
     },
     {
       "name": "Legin Knits",
       "role": "Front End",
-      "year": "2017",
+      "year": 2017,
+      "link": "http://www.google.com",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat egestas eleifend.",
       "image": "/images/vector-01.svg"
     },
     {
       "name": "Wildflowers",
       "role": "Front End",
-      "year": "2019",
+      "year": 2019,
+      "link": "http://www.google.com",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat egestas eleifend.",
       "image": "/images/vector-01.svg"
     },
     {
       "name": "Bremont",
       "role": "Full Stack",
-      "year": "2017",
+      "year": 2017,
+      "link": "http://www.google.com",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat egestas eleifend.",
       "image": "/images/vector-01.svg"
     }

@@ -5,7 +5,7 @@ import CursorContext from '../context/CursorContext';
 import CursorTrigger from '../components/CursorTrigger/CursorTrigger';
 import HamburgerButton from '../components/HamburgerButton/HamburgerButton';
 import Layout from '../components/Layout/Layout';
-import Link from 'next/link';
+import Loader from '../components/Loader/Loader';
 import Logo from '../assets/svgs/face.svg';
 import Menu from '../components/Menu/Menu';
 
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showNextButton, setShowNextButton] = useState(false);
   const [isHoveringOnTrigger, setHoveringOnTrigger] = useState(false);
-  const [triggerMessage, setTriggerMessage] = useState('');
+  const [triggerMessage, setTriggerMessage] = useState(null);
   const pageName = links.find((link) => link.slug === useRouter().pathname.split('/')[1]);
   const activeMenuIndex = links.findIndex((el) => el === pageName);
   const prevPage = activeMenuIndex === 0 ? links[links.length - 1] : links[activeMenuIndex - 1];
@@ -29,6 +29,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <Loader />
       <CursorContext.Provider value={{ isHoveringOnTrigger, setHoveringOnTrigger, triggerMessage, setTriggerMessage }}>
         <Cursor />
         <HamburgerButton onClick={() => setMenuOpen(!menuOpen)} isOpen={menuOpen} />
@@ -54,14 +55,6 @@ function MyApp({ Component, pageProps }) {
             <Component {...pageProps} />
           </Layout>
         </AppContext.Provider>
-        <Link href={`/${prevPage?.slug}`}>
-          <a className={classnames(styles.navigationChevron, styles.prev)}>{`< ${prevPage?.name}`}</a>
-        </Link>
-        <Link href={`/${nextPage?.slug}`}>
-          <a
-            className={classnames(styles.navigationChevron, styles.next, { [styles.show]: showNextButton })}
-          >{`${nextPage?.name} >`}</a>
-        </Link>
       </CursorContext.Provider>
     </>
   );
@@ -80,3 +73,12 @@ function MyApp({ Component, pageProps }) {
 // }
 
 export default MyApp;
+
+// <Link href={`/${prevPage?.slug}`}>
+//           <a className={classnames(styles.navigationChevron, styles.prev)}>{`< ${prevPage?.name}`}</a>
+//         </Link>
+//         <Link href={`/${nextPage?.slug}`}>
+//           <a
+//             className={classnames(styles.navigationChevron, styles.next, { [styles.show]: showNextButton })}
+//           >{`${nextPage?.name} >`}</a>
+//         </Link>

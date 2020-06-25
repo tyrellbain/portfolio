@@ -23,7 +23,7 @@ function Link({ className, children, display, href, message, onClick }) {
   const mouseOver = useCallback(
     (e) => {
       setHoveringOnTrigger(true);
-      message && setTriggerMessage(message);
+      setTriggerMessage(message);
     },
     [message, setHoveringOnTrigger, setTriggerMessage]
   );
@@ -31,7 +31,7 @@ function Link({ className, children, display, href, message, onClick }) {
   const mouseLeave = useCallback(
     (e) => {
       setHoveringOnTrigger(false);
-      message && setTriggerMessage('');
+      setTriggerMessage(null);
     },
     [setHoveringOnTrigger, setTriggerMessage]
   );
@@ -64,6 +64,7 @@ Link.propTypes = {
 
 Link.defaultProps = {
   display: 'inline',
+  message: null,
 };
 
 export default Link;

@@ -1,0 +1,46 @@
+@import '../../styles/vars.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/typography.scss';
+
+.root {
+  background: #000;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 65;
+
+  .content {
+    @include transform-center;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+    .logo {
+      padding-bottom: px(20);
+      width: px(60);
+    }
+
+    .loading {
+      @include font-style('h3');
+
+      animation: blink 1.25s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite;
+      color: $dark-gray;
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
