@@ -2,7 +2,7 @@
 @import '../../styles/typography.scss';
 
 .root {
-  height: calc(100vh - 2 * #{$layout-margin-mobile});
+  height: calc(100vh - 4 * #{$layout-margin-mobile});
   overflow: hidden;
   position: relative;
   width: 100%;

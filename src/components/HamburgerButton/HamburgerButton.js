@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './HamburgerButton.module.scss';
 
-function HamburgerButton({ onClick, isOpen }) {
+function HamburgerButton({ className, onClick, isOpen }) {
   const [cursorMsg, setCursorMsg] = useState('See More');
 
   useEffect(() => {
@@ -13,7 +13,7 @@ function HamburgerButton({ onClick, isOpen }) {
   }, [isOpen]);
 
   return (
-    <CursorTrigger message={cursorMsg}>
+    <CursorTrigger className={className} message={cursorMsg} display="block">
       <button className={classnames(styles.root, { [styles.isOpen]: isOpen })} onClick={onClick}>
         <div className={classnames(styles.bar, styles.top)} />
         <div className={classnames(styles.bar, styles.middle)} />
@@ -24,6 +24,7 @@ function HamburgerButton({ onClick, isOpen }) {
 }
 
 HamburgerButton.propTypes = {
+  className: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
 };

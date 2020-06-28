@@ -8,7 +8,7 @@
   min-height: 100vh;
   min-width: 100vw;
   overflow-x: hidden;
-  padding: $layout-margin-mobile;
+  padding: calc(#{$layout-margin-mobile} * 2) $layout-margin-mobile;
   position: fixed;
   width: 100%;
   @include layout('tablet') {

@@ -41,9 +41,13 @@ function MyApp({ Component, pageProps }) {
       </CSSTransition>
       <CursorContext.Provider value={{ isHoveringOnTrigger, setHoveringOnTrigger, triggerMessage, setTriggerMessage }}>
         <Cursor />
-        <HamburgerButton onClick={() => setMenuOpen(!menuOpen)} isOpen={menuOpen} />
+        <HamburgerButton
+          className={classnames(styles.hamburgerButton)}
+          onClick={() => setMenuOpen(!menuOpen)}
+          isOpen={menuOpen}
+        />
         <CursorTrigger className={classnames(styles.logo)} message="Home">
-          <Link href="/">
+          <Link href="/" display="block">
             <a>
               <Logo />
             </a>

@@ -36,8 +36,6 @@ function Link({ className, children, display, href, message, onClick, style }) {
     [setHoveringOnTrigger, setTriggerMessage]
   );
 
-  console.log(style);
-
   return (
     <div className={classnames(styles.root, styles[display])} onMouseOver={mouseOver} onMouseLeave={mouseLeave}>
       {isExternal ? (
