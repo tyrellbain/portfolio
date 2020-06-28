@@ -1,10 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import AppContext from '../context/AppContext';
+import { CSSTransition } from 'react-transition-group';
 import Cursor from '../components/Cursor/Cursor';
 import CursorContext from '../context/CursorContext';
 import CursorTrigger from '../components/CursorTrigger/CursorTrigger';
 import HamburgerButton from '../components/HamburgerButton/HamburgerButton';
 import Layout from '../components/Layout/Layout';
+import Link from '../components/Link/Link';
 import Loader from '../components/Loader/Loader';
 import Logo from '../assets/svgs/face.svg';
 import Menu from '../components/Menu/Menu';
@@ -22,34 +24,40 @@ function MyApp({ Component, pageProps }) {
   const [showNextButton, setShowNextButton] = useState(false);
   const [isHoveringOnTrigger, setHoveringOnTrigger] = useState(false);
   const [triggerMessage, setTriggerMessage] = useState(null);
+  const [loading, setLoading] = useState(true);
   const pageName = links.find((link) => link.slug === useRouter().pathname.split('/')[1]);
   const activeMenuIndex = links.findIndex((el) => el === pageName);
   const prevPage = activeMenuIndex === 0 ? links[links.length - 1] : links[activeMenuIndex - 1];
   const nextPage = activeMenuIndex === links.length - 1 ? links[0] : links[activeMenuIndex + 1];
 
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
   return (
     <>
-      <Loader />
+      <CSSTransition in={loading} timeout={2000} unmountOnExit>
+        <Loader />
+      </CSSTransition>
       <CursorContext.Provider value={{ isHoveringOnTrigger, setHoveringOnTrigger, triggerMessage, setTriggerMessage }}>
         <Cursor />
         <HamburgerButton onClick={() => setMenuOpen(!menuOpen)} isOpen={menuOpen} />
-        <CursorTrigger message="Home">
+        <CursorTrigger className={classnames(styles.logo)} message="Home">
           <Link href="/">
-            <a className={classnames(styles.logo)}>
+            <a>
               <Logo />
             </a>
           </Link>
         </CursorTrigger>
         <h2 className={classnames(styles.pageName)}>{pageName?.name}</h2>
-        {menuOpen ? (
-          <Menu
-            onClick={() => {
-              setHoveringOnTrigger(false);
-              setTriggerMessage('');
-              setMenuOpen(!menuOpen);
-            }}
-          />
-        ) : null}
+        <Menu
+          onClick={() => {
+            setHoveringOnTrigger(false);
+            setTriggerMessage('');
+            setMenuOpen(!menuOpen);
+          }}
+          isOpen={menuOpen}
+        />
         <AppContext.Provider value={{ showNextButton, setShowNextButton }}>
           <Layout>
             <Component {...pageProps} />

@@ -8,7 +8,7 @@ import styles from './Link.module.scss';
 
 const externalFlags = ['http', 'https', 'www'];
 
-function Link({ className, children, display, href, message, onClick }) {
+function Link({ className, children, display, href, message, onClick, style }) {
   const isExternal =
     externalFlags.filter((flag) => {
       return href?.includes(flag);
@@ -36,15 +36,17 @@ function Link({ className, children, display, href, message, onClick }) {
     [setHoveringOnTrigger, setTriggerMessage]
   );
 
+  console.log(style);
+
   return (
     <div className={classnames(styles.root, styles[display])} onMouseOver={mouseOver} onMouseLeave={mouseLeave}>
       {isExternal ? (
-        <a className={classnames(className)} href={href} target="_blank" onClick={onClick}>
+        <a className={classnames(className)} href={href} target="_blank" onClick={onClick} style={{ ...style }}>
           {children}
         </a>
       ) : (
         <NextLink href={href}>
-          <a className={classnames(className)} onClick={onClick}>
+          <a className={classnames(className)} onClick={onClick} style={{ ...style }}>
             {children}
           </a>
         </NextLink>
@@ -60,6 +62,7 @@ Link.propTypes = {
   href: PropTypes.string.isRequired,
   message: PropTypes.string,
   onClick: PropTypes.func,
+  style: PropTypes.object,
 };
 
 Link.defaultProps = {

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './CursorTrigger.module.scss';
 
-function CursorTrigger({ children, display, message }) {
+function CursorTrigger({ children, className, display, message }) {
   const mainRef = useRef();
   const { setHoveringOnTrigger, setTriggerMessage } = useContext(CursorContext);
 
@@ -30,7 +30,11 @@ function CursorTrigger({ children, display, message }) {
   );
 
   return (
-    <div className={classnames(styles.root, styles[display])} onMouseOver={mouseOver} onMouseLeave={mouseLeave}>
+    <div
+      className={classnames(styles.root, className, styles[display])}
+      onMouseOver={mouseOver}
+      onMouseLeave={mouseLeave}
+    >
       {children}
     </div>
   );
@@ -38,6 +42,7 @@ function CursorTrigger({ children, display, message }) {
 
 CursorTrigger.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+  className: PropTypes.string,
   display: PropTypes.oneOf(['block', 'inline']),
   message: PropTypes.string,
 };

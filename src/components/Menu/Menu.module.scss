@@ -3,14 +3,21 @@
 @import '../../styles/typography.scss';
 
 .root {
-  animation: fade-in 1s forwards;
-  background-color: $background-grey;
   bottom: 0;
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
   z-index: $zindex-overlay;
+
+  .shutter {
+    background-color: $background-grey;
+    height: 100%;
+    // opacity: 0;
+    position: absolute;
+    width: 20%;
+    transition: all 0.3s ease;
+  }
 
   .container {
     @include transform-center;
@@ -19,6 +26,7 @@
     height: 85%;
     justify-content: space-evenly;
     max-height: px(400);
+    // opacity: 0;
     position: absolute;
     // @include layout('tablet') {
     //   flex-direction: row;
@@ -29,35 +37,68 @@
       @include font-style(huge);
       display: flex;
       flex-direction: row;
-      //   flex-grow: 1;
+      overflow-x: hidden;
       position: relative;
       width: 100%;
-      //   @include layout('tablet') {
-      //     flex-direction: column;
-      //   }
 
       &:not(:last-child) {
         margin-right: px(64);
       }
       .link {
         color: $white;
+        left: 0;
+        position: relative;
 
         .pageCount {
           @include font-style(eyebrow);
           position: absolute;
           transform: rotate(90deg);
-          top: px(8);
+          top: px(15);
         }
       }
     }
   }
-}
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
+  &.animateIn {
+    .shutter {
+      transition: all 0.3s ease;
+      opacity: 1;
+      width: 0%;
+    }
+    .item {
+      .link {
+        left: -110%;
+        transition: left 0.3s ease 0.5s;
+      }
+    }
   }
-  100% {
-    opacity: 1;
+
+  &.animateInActive {
+    .shutter {
+      transition: all 0.3s ease;
+      opacity: 1;
+      width: 20%;
+    }
+    .item {
+      .link {
+        left: 0;
+        transition: left 0.3s ease 0.5s;
+      }
+    }
+  }
+
+  &.animateOut {
+    .shutter {
+      opacity: 1;
+      width: 0%;
+      transition: width 0.3s ease 0.2s;
+    }
+    .container {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      link {
+        left: 0;
+      }
+    }
   }
 }

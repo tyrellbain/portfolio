@@ -18,7 +18,6 @@
   z-index: $zindex-menu;
 
   &.isOpen {
-    background: #f00;
     .bar {
       transition: all 2s ease;
 
