@@ -14,10 +14,37 @@
     height: calc(100vh - 2 * #{$layout-margin-desktop});
   }
 
-  .slideCount {
-    @include font-style('h2');
+  .slideIndicator {
+    @include font-style('h3');
+    align-items: center;
     bottom: 80px;
+    display: flex;
+    flex-direction: row;
     color: $dark-gray;
     position: fixed;
+
+    .currentSlide,
+    .divider,
+    .slideCount {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .currentSlide {
+      padding-bottom: px(16);
+    }
+
+    .divider {
+      background-color: $dark-gray;
+      display: flex;
+      height: px(32);
+      margin: 0 px(2);
+      transform: rotate(45deg);
+      width: 2px;
+    }
+
+    .slideCount {
+      padding-top: px(16);
+    }
   }
 }

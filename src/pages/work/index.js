@@ -20,9 +20,10 @@ function Work() {
           <Slider projects={works} />
         </SliderContext.Provider>
       </div>
-      <div className={classnames(styles.slideCount)}>
-        <div>{activeSlide}</div>
-        <div>{slideCount}</div>
+      <div className={classnames(styles.slideIndicator)}>
+        <div className={classnames(styles.currentSlide)}>{activeSlide.toString().padStart(3, 0)}</div>
+        <div className={classnames(styles.divider)} />
+        <div className={classnames(styles.slideCount)}>{slideCount.toString().padStart(3, 0)}</div>
       </div>
     </div>
   );
