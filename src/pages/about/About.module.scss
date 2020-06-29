@@ -21,23 +21,24 @@
     .imgContainer {
       box-sizing: border-box;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       padding: px(10);
       position: sticky;
       max-width: 50%;
       top: 0;
 
       @include layout('tablet') {
-        // height: calc(100vh - 2 * #{$layout-margin-tablet});
+        height: calc(100vh - 2 * #{$layout-margin-tablet});
       }
       @include layout('desktopSm') {
-        max-height: calc(100vh - 2 * #{$layout-margin-desktop});
+        height: calc(100vh - 2 * #{$layout-margin-desktop});
       }
 
       .image {
+        display: flex;
         filter: grayscale(1);
         // height: 100%;
-        // min-height: 100%;
+        max-height: 100%;
       }
     }
 
