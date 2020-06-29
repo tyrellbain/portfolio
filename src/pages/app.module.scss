@@ -55,6 +55,7 @@
   transform: translate(-50%, -50%);
 
   @include layout('tablet') {
+    left: unset;
     right: calc(#{$layout-margin-tablet} / 2);
     top: 50%;
     text-orientation: mixed;
