@@ -22,9 +22,18 @@
   }
 
   .content {
+    align-items: center;
     display: flex;
     flex-direction: column;
+    margin-top: px(24);
     max-width: 500px;
+    text-align: center;
+
+    @include layout('desktopSm') {
+      align-items: flex-start;
+      margin-top: 0;
+      text-align: left;
+    }
 
     > * {
       overflow: hidden;
@@ -32,7 +41,11 @@
 
     .title {
       @include font-style('h3');
-      margin-bottom: px(20);
+      margin-bottom: px(10);
+
+      @include layout('desktopSm') {
+        margin-bottom: px(20);
+      }
     }
 
     .description {
