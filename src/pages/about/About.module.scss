@@ -26,12 +26,10 @@
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
+      max-width: 450px;
       padding: px(10);
       top: 0;
 
-      @include layout('tablet') {
-        height: calc(100vh - 2 * #{$layout-margin-tablet});
-      }
       @include layout('desktopSm') {
         height: calc(100vh - 2 * #{$layout-margin-desktop});
         max-width: 50%;
@@ -54,6 +52,7 @@
       display: flex;
       flex-direction: column;
       padding: px(10) px(25);
+      text-align: center;
 
       @include layout('desktopSm') {
         max-width: 50%;
@@ -74,6 +73,7 @@
 
       .aboutLists {
         display: flex;
+        justify-content: space-evenly;
 
         .social {
           margin-right: px(20);
