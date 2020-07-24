@@ -1,3 +1,4 @@
 export default {
+  APP_START: 'APP_START',
   UPDATE_CURSOR_STATUS: 'UPDATE_CURSOR_STATUS',
 };
