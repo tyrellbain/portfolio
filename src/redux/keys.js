@@ -1,0 +1,3 @@
+export default {
+  UPDATE_CURSOR_STATUS: 'UPDATE_CURSOR_STATUS',
+};
