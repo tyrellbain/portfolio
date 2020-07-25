@@ -6,9 +6,10 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "cross-env BUILD_ENV=dev next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prod": "cross-env BUILD_ENV=prod next build && next export && next start"
   },
   "dependencies": {
     "animejs": "^3.2.0",
@@ -21,12 +22,14 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
-    "react-transition-group": "^4.4.1"
+    "react-transition-group": "^4.4.1",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.10.1",
     "@svgr/webpack": "^5.4.0",
     "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",

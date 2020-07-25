@@ -16,6 +16,7 @@ const { links } = require('../data/menu.json');
 import styles from './app.module.scss';
 import { useRouter } from 'next/router';
 import useScroll from '../hooks/useScroll';
+import { withRedux } from '../redux/withRedux';
 
 import '../styles/global.scss';
 
@@ -84,7 +85,7 @@ function MyApp({ Component, pageProps }) {
 //   return { ...appProps };
 // };
 
-export default MyApp;
+export default withRedux(MyApp);
 
 // <Link href={`/${prevPage?.slug}`}>
 //           <a className={classnames(styles.navigationChevron, styles.prev)}>{`< ${prevPage?.name}`}</a>
