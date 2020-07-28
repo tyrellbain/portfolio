@@ -17,13 +17,13 @@ export default function reducer(state = defaultState, action) {
 
 // Action Creators
 export const mouseoverTrigger = (message) => ({
-  type: keys.APP_START,
+  type: keys.UPDATE_CURSOR_STATUS,
   hovering: true,
   message,
 });
 
 export const mouseleaveTrigger = () => ({
-  type: keys.SET_LAYOUT,
+  type: keys.UPDATE_CURSOR_STATUS,
   hovering: false,
   message: null,
 });
