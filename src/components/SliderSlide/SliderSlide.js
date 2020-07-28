@@ -1,7 +1,6 @@
 import Link from '../../components/Link/Link';
 import PropTypes from 'prop-types';
 import React from 'react';
-
 import classnames from 'classnames';
 import styles from './SliderSlide.module.scss';
 

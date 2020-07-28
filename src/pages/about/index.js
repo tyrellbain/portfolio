@@ -1,7 +1,5 @@
 import React, { useRef } from 'react';
-// import CursorTrigger from '../../components/CursorTrigger/CursorTrigger';
 import Link from '../../components/Link/Link';
-
 import classnames from 'classnames';
 import styles from './About.module.scss';
 

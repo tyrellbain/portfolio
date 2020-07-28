@@ -2,7 +2,6 @@ import React, { useCallback, useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Slide from '../SliderSlide/SliderSlide';
 import SliderContext from '../../context/SliderContext';
-
 import classnames from 'classnames';
 import debounce from 'lodash.debounce';
 import styles from './Slider.module.scss';

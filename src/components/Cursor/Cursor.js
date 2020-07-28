@@ -1,14 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import CursorContext from '../../context/CursorContext';
 import PropTypes from 'prop-types';
-
 import classnames from 'classnames';
 import styles from './Cursor.module.scss';
 import useMousePosition from '../../hooks/useMousePosition';
 import { useSelector } from 'react-redux';
-
-// Window, document, html, body, div#__next
-const DEFAULT_DOM_ELEMENTS = 5;
 
 const Cursor = () => {
   const { message, hovering } = useSelector((state) => state.cursor);

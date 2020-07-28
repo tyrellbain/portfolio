@@ -2,7 +2,6 @@ import { CSSTransition } from 'react-transition-group';
 import Link from '../Link/Link';
 import PropTypes from 'prop-types';
 import React from 'react';
-
 import classnames from 'classnames';
 const { links } = require('../../data/menu.json');
 import styles from './Menu.module.scss';

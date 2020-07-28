@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CursorTrigger from '../CursorTrigger/CursorTrigger';
 import PropTypes from 'prop-types';
-
 import classnames from 'classnames';
 import styles from './HamburgerButton.module.scss';
 

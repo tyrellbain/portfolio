@@ -2,7 +2,6 @@ import React, { useCallback, useContext, useEffect, useRef } from 'react';
 import CursorContext from '../../context/CursorContext';
 import NextLink from 'next/link';
 import PropTypes from 'prop-types';
-
 import classnames from 'classnames';
 import styles from './Link.module.scss';
 
