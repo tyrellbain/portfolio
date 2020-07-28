@@ -1,42 +1,28 @@
 import React, { useCallback, useContext, useEffect, useRef } from 'react';
+import { mouseleaveTrigger, mouseoverTrigger } from '../../redux/reducers/cursor';
 import CursorContext from '../../context/CursorContext';
 import NextLink from 'next/link';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Link.module.scss';
+import { useDispatch } from 'react-redux';
 
 const externalFlags = ['http', 'https', 'www'];
 
 function Link({ className, children, display, href, message, onClick, style }) {
+  const dispatch = useDispatch();
+
   const isExternal =
     externalFlags.filter((flag) => {
       return href?.includes(flag);
     }).length > 0;
 
-  const { setHoveringOnTrigger, setTriggerMessage } = useContext(CursorContext);
-
-  useEffect(() => {
-    setTriggerMessage(message);
-  }, [message, setTriggerMessage]);
-
-  const mouseOver = useCallback(
-    (e) => {
-      setHoveringOnTrigger(true);
-      setTriggerMessage(message);
-    },
-    [message, setHoveringOnTrigger, setTriggerMessage]
-  );
-
-  const mouseLeave = useCallback(
-    (e) => {
-      setHoveringOnTrigger(false);
-      setTriggerMessage(null);
-    },
-    [setHoveringOnTrigger, setTriggerMessage]
-  );
-
   return (
-    <div className={classnames(styles.root, styles[display])} onMouseOver={mouseOver} onMouseLeave={mouseLeave}>
+    <div
+      className={classnames(styles.root, styles[display])}
+      onMouseOver={() => dispatch(mouseoverTrigger(message))}
+      onMouseLeave={() => dispatch(mouseleaveTrigger())}
+    >
       {isExternal ? (
         <a className={classnames(className)} href={href} target="_blank" onClick={onClick} style={{ ...style }}>
           {children}
