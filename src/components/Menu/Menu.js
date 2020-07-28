@@ -1,15 +1,19 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import Link from '../Link/Link';
-import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 const { links } = require('../../data/menu.json');
+import { setMenuOpen } from '../../redux/reducers/app';
 import styles from './Menu.module.scss';
 import useMousePosition from '../../hooks/useMousePosition';
 
 const SHUTTER_COUNT = 8;
 
-function Menu({ onClick, isOpen }) {
+function Menu() {
+  const menuOpen = useSelector((state) => state.app.menuOpen);
+  const dispatch = useDispatch();
+
   const createShutters = () => {
     const shutters = [];
     for (let i = 0; i < SHUTTER_COUNT; i++) {
@@ -31,7 +35,7 @@ function Menu({ onClick, isOpen }) {
         enter: styles.animateIn,
         exit: styles.animateOut,
       }}
-      in={isOpen}
+      in={menuOpen}
       timeout={500}
       unmountOnExit
     >
@@ -43,7 +47,7 @@ function Menu({ onClick, isOpen }) {
               <Link
                 href={`/${link.slug}`}
                 className={classnames(styles.link)}
-                onClick={onClick}
+                onClick={() => dispatch(setMenuOpen(!menuOpen))}
                 style={{ transitionDelay: `${(i + 1) * 0.067}s` }}
               >
                 <span>{link.name}</span>
@@ -56,10 +60,5 @@ function Menu({ onClick, isOpen }) {
     </CSSTransition>
   );
 }
-
-Menu.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  isOpen: PropTypes.bool.isRequired,
-};
 
 export default Menu;

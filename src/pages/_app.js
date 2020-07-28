@@ -29,7 +29,6 @@ function MyApp({ Component, pageProps }) {
   const [isHoveringOnTrigger, setHoveringOnTrigger] = useState(false);
   const [triggerMessage, setTriggerMessage] = useState(null);
 
-  const [loading, setLoading] = useState(true);
   const start = useSelector((state) => state.app.start);
 
   const pageName = links.find((link) => link.slug === useRouter().pathname.split('/')[1]);
@@ -39,37 +38,29 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     dispatch(setAppStart());
-    setLoading(false);
   }, []);
 
   return (
     <>
       <Loader />
-      <CursorContext.Provider value={{ isHoveringOnTrigger, setHoveringOnTrigger, triggerMessage, setTriggerMessage }}>
-        <Cursor />
-        <HamburgerButton
-          className={classnames(styles.hamburgerButton)}
-          onClick={() => setMenuOpen(!menuOpen)}
-          isOpen={menuOpen}
-        />
-        <CursorTrigger className={classnames(styles.logo)} message="Home">
-          <Link href="/" display="block">
-            <Logo />
-          </Link>
-        </CursorTrigger>
-        <h2 className={classnames(styles.pageName)}>{pageName?.name}</h2>
-        <Menu
-          onClick={() => {
-            setHoveringOnTrigger(false);
-            setTriggerMessage('');
-            setMenuOpen(!menuOpen);
-          }}
-          isOpen={menuOpen}
-        />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </CursorContext.Provider>
+      <Cursor />
+      <HamburgerButton className={classnames(styles.hamburgerButton)} />
+      <CursorTrigger className={classnames(styles.logo)} message="Home">
+        <Link href="/" display="block">
+          <Logo />
+        </Link>
+      </CursorTrigger>
+      <h2 className={classnames(styles.pageName)}>{pageName?.name}</h2>
+      <Menu
+        onClick={() => {
+          setHoveringOnTrigger(false);
+          setTriggerMessage('');
+          setMenuOpen(!menuOpen);
+        }}
+      />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
