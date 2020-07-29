@@ -1,8 +1,8 @@
-import React, { useCallback, useContext, useEffect, useRef } from 'react';
 import { mouseleaveTrigger, mouseoverTrigger } from '../../redux/reducers/cursor';
 import CursorContext from '../../context/CursorContext';
 import NextLink from 'next/link';
 import PropTypes from 'prop-types';
+import React from 'react';
 import classnames from 'classnames';
 import styles from './Link.module.scss';
 import { useDispatch } from 'react-redux';

@@ -1,35 +1,13 @@
-import React, { useCallback, useContext, useEffect, useRef } from 'react';
 import { mouseleaveTrigger, mouseoverTrigger } from '../../redux/reducers/cursor';
 import CursorContext from '../../context/CursorContext';
 import PropTypes from 'prop-types';
+import React from 'react';
 import classnames from 'classnames';
 import styles from './CursorTrigger.module.scss';
 import { useDispatch } from 'react-redux';
 
 function CursorTrigger({ children, className, display, message }) {
   const dispatch = useDispatch();
-  const mainRef = useRef();
-  const { setHoveringOnTrigger, setTriggerMessage } = useContext(CursorContext);
-
-  useEffect(() => {
-    setTriggerMessage(message);
-  }, [message, setTriggerMessage]);
-
-  const mouseOver = useCallback(
-    (e) => {
-      setHoveringOnTrigger(true);
-      message && setTriggerMessage(message);
-    },
-    [message, setHoveringOnTrigger, setTriggerMessage]
-  );
-
-  const mouseLeave = useCallback(
-    (e) => {
-      setHoveringOnTrigger(false);
-      setTriggerMessage('');
-    },
-    [setHoveringOnTrigger, setTriggerMessage]
-  );
 
   return (
     <div

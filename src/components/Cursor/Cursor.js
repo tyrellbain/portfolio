@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
 import CursorContext from '../../context/CursorContext';
 import PropTypes from 'prop-types';
+import React from 'react';
 import classnames from 'classnames';
 import styles from './Cursor.module.scss';
 import useMousePosition from '../../hooks/useMousePosition';
