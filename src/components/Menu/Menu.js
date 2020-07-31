@@ -5,6 +5,7 @@ import React from 'react';
 import classnames from 'classnames';
 const { links } = require('../../data/menu.json');
 import { setMenuOpen } from '../../redux/reducers/app';
+import { mouseleaveTrigger } from '../../redux/reducers/cursor';
 import styles from './Menu.module.scss';
 import useMousePosition from '../../hooks/useMousePosition';
 
@@ -47,7 +48,10 @@ function Menu() {
               <Link
                 href={`/${link.slug}`}
                 className={classnames(styles.link)}
-                onClick={() => dispatch(setMenuOpen(!menuOpen))}
+                onClick={() => {
+                  dispatch(setMenuOpen(!menuOpen));
+                  dispatch(mouseleaveTrigger());
+                }}
                 style={{ transitionDelay: `${(i + 1) * 0.067}s` }}
               >
                 <span>{link.name}</span>

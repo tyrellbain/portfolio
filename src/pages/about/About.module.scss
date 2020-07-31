@@ -56,6 +56,7 @@
 
       @include layout('desktopSm') {
         max-width: 50%;
+        text-align: left;
       }
 
       .section {
@@ -74,6 +75,10 @@
       .aboutLists {
         display: flex;
         justify-content: space-evenly;
+
+        @include layout('desktopSm') {
+          justify-content: flex-start;
+        }
 
         .social {
           margin-right: px(20);

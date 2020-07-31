@@ -18,12 +18,12 @@ export default function reducer(state = defaultState, action) {
 }
 
 // Action Creators
-export const updateSlide = (activeSlide) => ({
+export const setActiveSlide = (activeSlide) => ({
   type: keys.UPDATE_ACTVE_SLIDE,
   activeSlide,
 });
 
-export const seSlideCount = (slideCount) => ({
-  type: keys.UPDATE_CURSOR_STATUS,
+export const setSlideCount = (slideCount) => ({
+  type: keys.SET_SLIDE_COUNT,
   slideCount,
 });

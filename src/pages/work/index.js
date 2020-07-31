@@ -1,22 +1,26 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Slider from '../../components/Slider/Slider';
-import SliderContext from '../../context/SliderContext';
 import classnames from 'classnames';
 import debounce from 'lodash.debounce';
+import { setSlideCount } from '../../redux/reducers/slider';
 import styles from './Work.module.scss';
 
 const { works } = require('../../data/work.json');
-const slideCount = works.length;
+// const slideCount = works.length;
 
 function Work() {
-  const [activeSlide, setActiveSlide] = useState(1);
+  const { activeSlide, slideCount } = useSelector((state) => state.slider);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setSlideCount(works.length));
+  }, []);
 
   return (
     <div className={classnames(styles.root)}>
       <div className={classnames(styles.container)}>
-        <SliderContext.Provider value={{ activeSlide, setActiveSlide }}>
-          <Slider projects={works} />
-        </SliderContext.Provider>
+        <Slider projects={works} />
       </div>
       <div className={classnames(styles.slideIndicator)}>
         <div className={classnames(styles.currentSlide)}>{activeSlide.toString().padStart(3, 0)}</div>

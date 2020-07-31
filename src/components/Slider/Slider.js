@@ -1,26 +1,27 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import Slide from '../SliderSlide/SliderSlide';
-import SliderContext from '../../context/SliderContext';
 import classnames from 'classnames';
 import debounce from 'lodash.debounce';
+import { setActiveSlide } from '../../redux/reducers/slider';
 import styles from './Slider.module.scss';
 
 const SCROLL_THRESHOLD = 1;
 
 function Slider({ projects }) {
-  const { activeSlide, setActiveSlide } = useContext(SliderContext);
-  const slideCount = projects.length;
+  const dispatch = useDispatch();
+  const { activeSlide, slideCount } = useSelector((state) => state.slider);
 
   const nextSlide = useCallback(() => {
     if (activeSlide !== slideCount) {
-      setActiveSlide(activeSlide + 1);
+      dispatch(setActiveSlide(activeSlide + 1));
     }
-  }, [setActiveSlide, activeSlide]);
+  }, [dispatch, setActiveSlide, activeSlide]);
 
   const prevSlide = useCallback(() => {
     if (activeSlide !== 1) {
-      setActiveSlide(activeSlide - 1);
+      dispatch(setActiveSlide(activeSlide - 1));
     }
   }, [activeSlide, setActiveSlide]);
 
