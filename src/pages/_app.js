@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import Cursor from '../components/Cursor/Cursor';
-import CursorContext from '../context/CursorContext';
 import CursorTrigger from '../components/CursorTrigger/CursorTrigger';
 import HamburgerButton from '../components/HamburgerButton/HamburgerButton';
 import Layout from '../components/Layout/Layout';

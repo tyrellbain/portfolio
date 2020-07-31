@@ -1,5 +1,4 @@
 import { mouseleaveTrigger, mouseoverTrigger } from '../../redux/reducers/cursor';
-import CursorContext from '../../context/CursorContext';
 import NextLink from 'next/link';
 import PropTypes from 'prop-types';
 import React from 'react';
