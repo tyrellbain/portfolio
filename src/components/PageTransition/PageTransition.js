@@ -1,15 +1,15 @@
+import { CSSTransition, Transition } from 'react-transition-group';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { CSSTransition, Transition } from 'react-transition-group';
 import Logo from '../../assets/svgs/face.svg';
 import PropTypes from 'prop-types';
 import { SHUTTER_COUNT } from '../../utils/config';
 import anime from 'animejs';
 import classnames from 'classnames';
-import styles from './PageTransition.module.scss';
 import { setPageLoaded } from '../../redux/reducers/app';
-import useTimeout from '../../hooks/useTimeout';
+import styles from './PageTransition.module.scss';
 import { useRouter } from 'next/router';
+import useTimeout from '../../hooks/useTimeout';
 
 const ANIMATION_OUT_DURATION_MS = 565;
 const ANIMATION_IN_DURATION_MS = 435;

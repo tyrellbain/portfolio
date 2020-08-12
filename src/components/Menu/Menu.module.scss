@@ -13,7 +13,6 @@
   .shutter {
     background-color: $background-grey;
     height: 100%;
-    // opacity: 0;
     position: absolute;
     width: 12.5%;
     transition: all 0.3s ease;
@@ -26,12 +25,7 @@
     height: 85%;
     justify-content: space-evenly;
     max-height: px(400);
-    // opacity: 0;
     position: absolute;
-    // @include layout('tablet') {
-    //   flex-direction: row;
-    //   flex-wrap: nowrap;
-    // }
 
     .item {
       @include font-style(huge);
