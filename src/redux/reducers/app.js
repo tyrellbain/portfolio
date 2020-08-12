@@ -3,6 +3,7 @@ import keys from '../keys';
 const defaultState = {
   start: false,
   menuOpen: false,
+  pageLoaded: false,
 };
 
 // Reducer
@@ -12,6 +13,8 @@ export default function reducer(state = defaultState, action) {
       return { ...state, start: action.start };
     case keys.UPDATE_MENU_STATUS:
       return { ...state, menuOpen: action.menuOpen };
+    case keys.PAGE_LOADED:
+      return { ...state, pageLoaded: action.pageLoaded };
     default:
       return state;
   }
@@ -26,4 +29,9 @@ export const setAppStart = () => ({
 export const setMenuOpen = (isOpen) => ({
   type: keys.UPDATE_MENU_STATUS,
   menuOpen: isOpen,
+});
+
+export const setPageLoaded = (isLoaded) => ({
+  type: keys.PAGE_LOADED,
+  pageLoaded: isLoaded,
 });

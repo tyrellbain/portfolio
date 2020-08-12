@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Slider from '../../components/Slider/Slider';
 import classnames from 'classnames';
@@ -6,8 +6,9 @@ import debounce from 'lodash.debounce';
 import { setSlideCount } from '../../redux/reducers/slider';
 import styles from './Work.module.scss';
 
+import { setPageLoaded } from '../../redux/reducers/app';
+
 const { works } = require('../../data/work.json');
-// const slideCount = works.length;
 
 function Work() {
   const { activeSlide, slideCount } = useSelector((state) => state.slider);
@@ -15,6 +16,11 @@ function Work() {
 
   useEffect(() => {
     dispatch(setSlideCount(works.length));
+    return () => dispatch(setPageLoaded(false));
+  }, []);
+
+  useLayoutEffect(() => {
+    dispatch(setPageLoaded(true));
   }, []);
 
   return (

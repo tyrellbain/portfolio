@@ -1,10 +1,22 @@
-import React, { useCallback, useRef } from 'react';
 import InfiniteScrollRail from '../components/InfiniteScrollRail/InfiniteScrollRail';
-
+import React, { useEffect, useLayoutEffect } from 'react';
 import classnames from 'classnames';
 import styles from './index.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPageLoaded } from '../redux/reducers/app';
 
 function Home({ copy }) {
+  const dispatch = useDispatch();
+  const { pageLoaded } = useSelector((state) => state.app);
+
+  useEffect(() => {
+    return () => dispatch(setPageLoaded(false));
+  }, []);
+
+  useLayoutEffect(() => {
+    dispatch(setPageLoaded(true));
+  }, []);
+
   return (
     <div className={classnames(styles.root)}>
       <div className={classnames(styles.background)}>

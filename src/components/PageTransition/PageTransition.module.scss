@@ -1,0 +1,49 @@
+@import '../../styles/vars.scss';
+
+.loader {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: $zindex-overlay;
+
+  .shutter {
+    background-color: $transition-grey;
+    // border-top-color: rgba(255, 255, 0, 0.1);
+    // border-top-style: solid;
+    bottom: 0;
+    height: 0%;
+    position: absolute;
+    width: 12.5%;
+  }
+
+  &.animateIn {
+    .shutter {
+      height: 100%;
+      transition: all 0.33s cubic-bezier(0.33, 0.66, 0.5, 0.33);
+    }
+  }
+
+  &.animateOut {
+    .shutter {
+      height: 100%;
+      transition: all 0.33s ease;
+      width: 0%;
+    }
+  }
+}
+
+.page {
+  opacity: 0;
+
+  &.fadeIn {
+    opacity: 1;
+    transition: opacity 0.33s ease;
+  }
+
+  &.fadeOut {
+    opacity: 0;
+    transition: opacity 0.33s ease;
+  }
+}

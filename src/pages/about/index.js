@@ -1,9 +1,21 @@
-import React, { useRef } from 'react';
 import Link from '../../components/Link/Link';
+import React, { useEffect } from 'react';
 import classnames from 'classnames';
 import styles from './About.module.scss';
+import { useDispatch } from 'react-redux';
+import { setPageLoaded } from '../../redux/reducers/app';
 
 function About() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    return () => dispatch(setPageLoaded(false));
+  }, []);
+
+  useLayoutEffect(() => {
+    dispatch(setPageLoaded(true));
+  }, []);
+
   return (
     <div className={classnames(styles.root)}>
       <div className={classnames(styles.container)}>
