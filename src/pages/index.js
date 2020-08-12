@@ -1,9 +1,9 @@
-import InfiniteScrollRail from '../components/InfiniteScrollRail/InfiniteScrollRail';
 import React, { useEffect, useLayoutEffect } from 'react';
-import classnames from 'classnames';
-import styles from './index.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
+import InfiniteScrollRail from '../components/InfiniteScrollRail/InfiniteScrollRail';
+import classnames from 'classnames';
 import { setPageLoaded } from '../redux/reducers/app';
+import styles from './index.module.scss';
 
 function Home({ copy }) {
   const dispatch = useDispatch();

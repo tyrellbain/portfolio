@@ -2,14 +2,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import Link from '../Link/Link';
 import React from 'react';
+import { SHUTTER_COUNT } from '../../utils/config';
 import classnames from 'classnames';
 const { links } = require('../../data/menu.json');
-import { setMenuOpen } from '../../redux/reducers/app';
 import { mouseleaveTrigger } from '../../redux/reducers/cursor';
+import { setMenuOpen } from '../../redux/reducers/app';
 import styles from './Menu.module.scss';
 import useMousePosition from '../../hooks/useMousePosition';
-
-const SHUTTER_COUNT = 8;
 
 function Menu() {
   const menuOpen = useSelector((state) => state.app.menuOpen);
@@ -48,8 +47,8 @@ function Menu() {
               <Link
                 href={`/${link.slug}`}
                 className={classnames(styles.link)}
-                onClick={() => {
-                  dispatch(setMenuOpen(!menuOpen));
+                onClick={(e) => {
+                  dispatch(setMenuOpen(false));
                   dispatch(mouseleaveTrigger());
                 }}
                 style={{ transitionDelay: `${(i + 1) * 0.067}s` }}

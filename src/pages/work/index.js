@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import Slider from '../../components/Slider/Slider';
 import classnames from 'classnames';
 import debounce from 'lodash.debounce';
+import { setPageLoaded } from '../../redux/reducers/app';
 import { setSlideCount } from '../../redux/reducers/slider';
 import styles from './Work.module.scss';
-
-import { setPageLoaded } from '../../redux/reducers/app';
 
 const { works } = require('../../data/work.json');
 

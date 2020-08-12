@@ -14,7 +14,7 @@ const Cursor = () => {
       style={{ left: x, top: y }}
       className={classnames(styles.root, {
         [styles.button]: hovering,
-        [styles.hideDot]: message && message > 0,
+        [styles.hideDot]: hovering && message,
       })}
     >
       <div className={classnames(styles.inner)} />

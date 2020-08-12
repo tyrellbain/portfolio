@@ -1,9 +1,9 @@
+import React, { useEffect, useLayoutEffect } from 'react';
 import Link from '../../components/Link/Link';
-import React, { useEffect } from 'react';
 import classnames from 'classnames';
+import { setPageLoaded } from '../../redux/reducers/app';
 import styles from './About.module.scss';
 import { useDispatch } from 'react-redux';
-import { setPageLoaded } from '../../redux/reducers/app';
 
 function About() {
   const dispatch = useDispatch();

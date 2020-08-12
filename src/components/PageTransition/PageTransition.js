@@ -30,7 +30,6 @@ function PageTransition({ children }) {
   }, [router]);
 
   const createShutters = useCallback(() => {
-    console.log('Create');
     let shutters = [];
     for (let i = 0; i < SHUTTER_COUNT; i++) {
       const shuterRef = shutterRefs.current[i] ? shutterRefs.current[i] : React.createRef();
@@ -48,7 +47,6 @@ function PageTransition({ children }) {
   }, []);
 
   const animateOut = useCallback(() => {
-    console.log('ANIMATE OUT');
     if (shutterRefs.current) {
       anime({
         targets: shutterRefs.current.map((ref) => ref.current),
