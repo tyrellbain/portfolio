@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 const externalFlags = ['http', 'https', 'www'];
 
 function Link({ className, children, display, href, message, onClick, style }) {
+  console.log(className);
   const dispatch = useDispatch();
 
   const isExternal =
@@ -40,7 +41,7 @@ function Link({ className, children, display, href, message, onClick, style }) {
 Link.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
-  display: PropTypes.oneOf(['block', 'inline']),
+  display: PropTypes.oneOf(['inherit', 'block', 'inline']),
   href: PropTypes.string.isRequired,
   message: PropTypes.string,
   onClick: PropTypes.func,
@@ -48,7 +49,7 @@ Link.propTypes = {
 };
 
 Link.defaultProps = {
-  display: 'inline',
+  display: 'inherit',
   message: null,
 };
 

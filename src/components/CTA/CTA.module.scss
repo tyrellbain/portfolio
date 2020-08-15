@@ -1,0 +1,42 @@
+@import '../../styles/vars.scss';
+
+.root {
+  align-items: center;
+  background-color: $background-grey;
+  border: 2px solid $yellow;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: $muted-white;
+  display: inline-flex;
+  justify-content: center;
+  padding: 10px 25px;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &::before {
+    background-color: $yellow;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: left 0.3s ease;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    transition: left 0.1s ease 0.2s;
+  }
+
+  &:hover {
+    .content {
+      color: $yellow;
+    }
+
+    &::before {
+      left: 100%;
+    }
+  }
+}

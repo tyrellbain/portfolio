@@ -1,13 +1,33 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect } from 'react';
+import CTA from '../components/CTA/CTA';
 import { useDispatch, useSelector } from 'react-redux';
 import InfiniteScrollRail from '../components/InfiniteScrollRail/InfiniteScrollRail';
 import classnames from 'classnames';
 import { setPageLoaded } from '../redux/reducers/app';
 import styles from './index.module.scss';
+import { useRouter } from 'next/router';
+
+const { links } = require('../data/menu.json');
 
 function Home({ copy }) {
   const dispatch = useDispatch();
+  const router = useRouter();
   const { pageLoaded } = useSelector((state) => state.app);
+
+  const createButtons = useCallback(() => {
+    const slug = router.pathname.split('/')[0];
+    return links.map((link) => {
+      if (link.slug !== slug) {
+        return (
+          <CTA href={link.slug} key={link.name}>
+            {link.name}
+          </CTA>
+        );
+      }
+      return null;
+    });
+  }, [links]);
+  createButtons();
 
   useEffect(() => {
     return () => dispatch(setPageLoaded(false));
@@ -64,11 +84,7 @@ function Home({ copy }) {
       <div className={classnames(styles.imageContainer)}>
         <img className={classnames(styles.image)} src="/images/home.jpg" />
       </div>
-      <div>
-        <button>Works</button>
-        <button>About</button>
-        <button>Contact</button>
-      </div>
+      <div className={classnames(styles.buttonContainer)}>{createButtons()}</div>
     </div>
   );
 }

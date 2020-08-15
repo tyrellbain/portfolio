@@ -22,7 +22,8 @@ import '../styles/global.scss';
 
 function MyApp({ Component, pageProps }) {
   // const dispatch = useDispatch();
-  const pageName = links.find((link) => link.slug === useRouter().pathname.split('/')[1]);
+  const router = useRouter();
+  const pageName = links.find((link) => link.slug === router.pathname.split('/')[1]);
 
   return (
     <>
