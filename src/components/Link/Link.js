@@ -9,7 +9,6 @@ import { useDispatch } from 'react-redux';
 const externalFlags = ['http', 'https', 'www'];
 
 function Link({ className, children, display, href, message, onClick, style }) {
-  console.log(className);
   const dispatch = useDispatch();
 
   const isExternal =

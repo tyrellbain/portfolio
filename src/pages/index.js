@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useLayoutEffect } from 'react';
-import CTA from '../components/CTA/CTA';
 import { useDispatch, useSelector } from 'react-redux';
+import CTA from '../components/CTA/CTA';
 import InfiniteScrollRail from '../components/InfiniteScrollRail/InfiniteScrollRail';
 import classnames from 'classnames';
 import { setPageLoaded } from '../redux/reducers/app';
