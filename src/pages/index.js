@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import CTA from '../components/CTA/CTA';
 import InfiniteScrollRail from '../components/InfiniteScrollRail/InfiniteScrollRail';
 import classnames from 'classnames';
+import { mouseleaveTrigger } from '../redux/reducers/cursor';
 import { setPageLoaded } from '../redux/reducers/app';
 import styles from './index.module.scss';
 import { useRouter } from 'next/router';
@@ -30,6 +31,7 @@ function Home({ copy }) {
   createButtons();
 
   useEffect(() => {
+    dispatch(mouseleaveTrigger());
     return () => dispatch(setPageLoaded(false));
   }, []);
 

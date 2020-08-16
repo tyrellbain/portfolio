@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Slider from '../../components/Slider/Slider';
 import classnames from 'classnames';
 import debounce from 'lodash.debounce';
+import { mouseleaveTrigger } from '../../redux/reducers/cursor';
 import { setPageLoaded } from '../../redux/reducers/app';
 import { setSlideCount } from '../../redux/reducers/slider';
 import styles from './Work.module.scss';
@@ -14,6 +15,7 @@ function Work() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(mouseleaveTrigger());
     dispatch(setSlideCount(works.length));
     return () => dispatch(setPageLoaded(false));
   }, []);

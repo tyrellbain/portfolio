@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect } from 'react';
 import Link from '../../components/Link/Link';
 import classnames from 'classnames';
+import { mouseleaveTrigger } from '../../redux/reducers/cursor';
 import { setPageLoaded } from '../../redux/reducers/app';
 import styles from './About.module.scss';
 import { useDispatch } from 'react-redux';
@@ -9,6 +10,7 @@ function About() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(mouseleaveTrigger());
     return () => dispatch(setPageLoaded(false));
   }, []);
 
