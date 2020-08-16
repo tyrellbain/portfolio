@@ -1,6 +1,6 @@
-.root {
-  // width: 100%;
+@import '../../styles/mixins.scss';
 
+.root {
   &.flip {
     transform: scaleX(-1);
     .tile {
@@ -14,9 +14,10 @@
     .tile {
       box-sizing: border-box;
       display: inline-block;
-      padding: 10px 20px;
-      .img {
-        width: 100%;
+      padding: 5px 10px;
+
+      @include layout('tablet') {
+        padding: 10px 20px;
       }
     }
   }

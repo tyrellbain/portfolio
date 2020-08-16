@@ -24,8 +24,12 @@
     flex-direction: column;
     height: 85%;
     justify-content: space-evenly;
-    max-height: px(400);
+    max-height: px(250);
     position: absolute;
+
+    @include layout('tablet') {
+      max-height: px(400);
+    }
 
     .item {
       @include font-style(huge);
@@ -47,7 +51,7 @@
           @include font-style(eyebrow);
           position: absolute;
           transform: rotate(90deg);
-          top: px(15);
+          top: px(2.5);
         }
       }
     }

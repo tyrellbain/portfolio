@@ -1,5 +1,7 @@
 export const isClient = typeof window !== 'undefined';
 
+export const hasTouch = isClient && 'ontouchstart' in window;
+
 export const getBreakpoint = () => {
   if (!isClient) return {};
 

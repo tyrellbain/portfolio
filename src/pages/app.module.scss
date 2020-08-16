@@ -35,7 +35,7 @@
   @include layout('tablet') {
     left: calc(#{$layout-margin-tablet} / 2);
     padding-top: 0;
-    top: calc(#{$layout-margin-tablet} / 2);
+    top: 50%;
     transform: translate(-50%, -50%);
   }
 
