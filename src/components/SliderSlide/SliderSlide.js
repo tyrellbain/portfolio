@@ -1,4 +1,5 @@
-import Link from '../../components/Link/Link';
+import Link from '../Link/Link';
+import CTA from '../CTA/CTA';
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
@@ -15,13 +16,16 @@ function SliderSlide({ data, isActive }) {
           <span className={classnames(styles.transitionElement, styles.transitionText)}>{data.description}</span>
         </p>
         <div className={classnames(styles.meta)}>
-          <span className={classnames(styles.transitionElement, styles.transitionText)}>{data.role}/</span>
+          <span className={classnames(styles.transitionElement, styles.transitionText)}>{data.role}&nbsp;/&nbsp;</span>
           <span className={classnames(styles.transitionElement, styles.transitionText)}>{data.year}</span>
         </div>
+        <CTA className={classnames(styles.transitionElement, styles.transitionText)} href={data.link}>
+          View Site
+        </CTA>
       </div>
       <div className={classnames(styles.imgContainer)}>
         <div className={classnames(styles.transitionElement, styles.transitionImage)}>
-          <img src={data.image} />
+          <img className={classnames(styles.image)} src={data.image} />
         </div>
       </div>
     </article>

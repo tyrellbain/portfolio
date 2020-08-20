@@ -23,7 +23,14 @@ function Link({ className, children, display, href, message, onClick, style }) {
       onMouseLeave={() => dispatch(mouseleaveTrigger())}
     >
       {isExternal ? (
-        <a className={classnames(className)} href={href} target="_blank" onClick={onClick} style={{ ...style }}>
+        <a
+          className={classnames(className)}
+          href={href}
+          rel="noopener noreferrer"
+          target="_blank"
+          onClick={onClick}
+          style={{ ...style }}
+        >
           {children}
         </a>
       ) : (

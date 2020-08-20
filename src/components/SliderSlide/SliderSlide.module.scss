@@ -6,9 +6,11 @@
   align-items: center;
   display: flex;
   flex-direction: column-reverse;
-  justify-content: center;
   height: 100%;
+  justify-content: center;
+  opacity: 0;
   position: absolute;
+  transition: opacity 0.3s ease;
   width: 100%;
 
   @include layout('desktopSm') {
@@ -56,6 +58,7 @@
     .meta {
       @include font-style('eyebrow');
       display: flex;
+      margin-bottom: 20px;
     }
 
     .button {
@@ -99,6 +102,11 @@
     overflow: hidden;
     width: 300px;
 
+    .image {
+      filter: grayscale(0.33);
+      max-width: 100%;
+    }
+
     .transitionImage {
       opacity: 0;
       transform: translateY(50%);
@@ -106,6 +114,9 @@
   }
 
   &.activeProject {
+    opacity: 1;
+    z-index: 2;
+
     .transitionText {
       opacity: 1;
       transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;

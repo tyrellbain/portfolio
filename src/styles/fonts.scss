@@ -69,3 +69,13 @@ $base-path: '../assets/fonts/';
     url('#{$base-path}RubikMonoOne/RubikMonoOne.woff') format('woff'),
     url('#{$base-path}RubikMonoOne/RubikMonoOne.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'PermanentMarker';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('#{$base-path}Permanent_Marker/PermanentMarker-Regular.woff2') format('woff2'),
+    url('#{$base-path}Permanent_Marker/PermanentMarker-Regular.woff') format('woff'),
+    url('#{$base-path}Permanent_Marker/PermanentMarker-Regular.ttf') format('truetype');
+}

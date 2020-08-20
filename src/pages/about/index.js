@@ -1,4 +1,5 @@
 import React, { useEffect, useLayoutEffect } from 'react';
+import Head from 'next/head';
 import Link from '../../components/Link/Link';
 import classnames from 'classnames';
 import { mouseleaveTrigger } from '../../redux/reducers/cursor';
@@ -20,21 +21,29 @@ function About() {
 
   return (
     <div className={classnames(styles.root)}>
+      <Head>
+        <title>About | Tyrell Bain</title>
+        <meta name="description" content="Tyrell Bain is a Full Stack Developer based in Toronto, Canada."></meta>
+      </Head>
       <div className={classnames(styles.container)}>
         <div className={classnames(styles.imgContainer)}>
           <img className={classnames(styles.image)} src="/images/about.jpg" />
         </div>
         <div className={classnames(styles.content)}>
           <div className={classnames(styles.section, styles.aboutWork)}>
-            Hi! I'm Tyrell a Toronto based Full-Stack Developer currently working at
-            <Link href="https://www.jam3.com/" message="Where I work">
-              Jam3
-            </Link>
-            in Toronto, Canada. I've had the chance to work on a diverse set of projects from local business to global
-            brands.
-          </div>
-          <div className={classnames(styles.section, styles.aboutPersonal)}>
-            In my freetime I can be found coding, biking, baking or brewing beer.
+            <p className={classnames(styles.section)}>
+              Hey, I’m Tyrell, a full stack web developer with a solid background in computer science and languages such
+              as PHP and React. Currently I work for Jam3, an award-winning digital design and experience agency based
+              in Toronto.
+            </p>
+            <p className={classnames(styles.section)}>
+              For the past five years, I've worked as a development lead on various projects for global brands such as
+              Facebook, Oculus and a diverse list of clients. As a certified scrum master, I enjoy collaborating with a
+              team of talented designers and developers to take complex ideas from concept to production online.
+            </p>
+            <p className={classnames(styles.section)}>
+              When I'm not coding, I enjoy cycling and making my own beer and hot sauce.
+            </p>
           </div>
           <div className={classnames(styles.section, styles.aboutLists)}>
             <div className={classnames(styles.social)}>

@@ -1,13 +1,14 @@
 import React, { useCallback, useEffect, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import CTA from '../components/CTA/CTA';
+import Head from 'next/head';
 import InfiniteScrollRail from '../components/InfiniteScrollRail/InfiniteScrollRail';
+import Link from '../components/Link/Link';
 import classnames from 'classnames';
+import { getBreakpoint } from '../utils/detect';
 import { mouseleaveTrigger } from '../redux/reducers/cursor';
 import { setPageLoaded } from '../redux/reducers/app';
 import styles from './index.module.scss';
 import { useRouter } from 'next/router';
-import { getBreakpoint } from '../utils/detect';
 
 const { links } = require('../data/menu.json');
 
@@ -22,9 +23,9 @@ function Home({ copy }) {
     return links.map((link) => {
       if (link.slug !== slug) {
         return (
-          <CTA href={link.slug} key={link.name}>
+          <Link className={styles.button} href={link.slug} key={link.name}>
             {link.name}
-          </CTA>
+          </Link>
         );
       }
       return null;
@@ -43,6 +44,10 @@ function Home({ copy }) {
 
   return (
     <div className={classnames(styles.root)}>
+      <Head>
+        <title>Home | Tyrell Bain</title>
+        <meta name="description" content="Learn more about Tyrell Bain and past work." />
+      </Head>
       <div className={classnames(styles.background)}>
         <div className={classnames(styles.backgroundInner)}>
           <InfiniteScrollRail speed={breakpoint.mobile ? 1 : 10}>
@@ -94,8 +99,8 @@ function Home({ copy }) {
       </div>
       <div className={classnames(styles.imageContainer)}>
         <img className={classnames(styles.image)} src="/images/home.jpg" />
+        <div className={classnames(styles.buttonContainer)}>{createButtons()}</div>
       </div>
-      <div className={classnames(styles.buttonContainer)}>{createButtons()}</div>
     </div>
   );
 }

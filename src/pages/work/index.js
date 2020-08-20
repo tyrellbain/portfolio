@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Head from 'next/head';
 import Slider from '../../components/Slider/Slider';
 import classnames from 'classnames';
 import debounce from 'lodash.debounce';
@@ -26,6 +27,11 @@ function Work() {
 
   return (
     <div className={classnames(styles.root)}>
+      <Head>
+        <title>Work | Tyrell Bain</title>
+        <meta name="description" content="Sample selection of past work" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className={classnames(styles.container)}>
         <Slider projects={works} />
       </div>
