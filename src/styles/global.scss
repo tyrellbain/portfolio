@@ -6,14 +6,9 @@ html {
   background-color: $background-grey;
   box-sizing: border-box;
   color: $white;
-  // cursor: none;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   font-size: 16px;
-
-  * {
-    // cursor: none;
-  }
 }
 
 body {
@@ -57,6 +52,7 @@ button {
 }
 
 a {
+  color: var($white);
   text-decoration: none;
   &:visited {
     color: unset;
