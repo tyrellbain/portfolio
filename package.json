@@ -22,7 +22,8 @@
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
     "react-transition-group": "^4.4.1",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.10.4",
@@ -35,7 +36,6 @@
     "prettier": "^2.0.4",
     "prettier-eslint": "^9.0.1",
     "prop-types": "^15.7.2",
-    "redux-devtools-extension": "^2.13.8",
     "sass": "^1.26.10"
   }
 }
