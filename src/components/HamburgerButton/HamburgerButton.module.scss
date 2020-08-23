@@ -10,8 +10,12 @@
   height: px(20);
   justify-content: space-evenly;
   outline: none;
-  width: 100%;
+  width: px(30);
   z-index: $zindex-menu;
+
+  @include layout('tablet') {
+    width: 100%;
+  }
 
   &.isOpen {
     .bar {
