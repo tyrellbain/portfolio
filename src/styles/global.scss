@@ -52,7 +52,7 @@ button {
 }
 
 a {
-  color: var($white);
+  color: $white;
   text-decoration: none;
   &:visited {
     color: unset;
