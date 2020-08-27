@@ -17,11 +17,19 @@
   .slideIndicator {
     @include font-style('h3');
     align-items: center;
-    bottom: 80px;
+    bottom: 70px;
     display: flex;
     flex-direction: row;
     color: $dark-gray;
+    left: 50%;
     position: fixed;
+    transform: translateX(-50%);
+
+    @include layout('desktopSm') {
+      bottom: 80px;
+      left: unset;
+      transform: none;
+    }
 
     .currentSlide,
     .divider,
@@ -46,5 +54,27 @@
     .slideCount {
       padding-top: px(16);
     }
+  }
+
+  .scrollIndicator {
+    animation: bounce 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite;
+    bottom: 0;
+    color: $yellow;
+    font-size: px(18);
+    left: 50%;
+    line-height: px(10);
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    bottom: 0;
+  }
+
+  50% {
+    bottom: 5px;
   }
 }

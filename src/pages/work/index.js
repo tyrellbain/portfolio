@@ -40,6 +40,7 @@ function Work() {
         <div className={classnames(styles.divider)} />
         <div className={classnames(styles.slideCount)}>{slideCount.toString().padStart(3, 0)}</div>
       </div>
+      <div className={styles.scrollIndicator}>&#9662;</div>
     </div>
   );
 }
