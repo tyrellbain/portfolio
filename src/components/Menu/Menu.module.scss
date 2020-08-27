@@ -35,7 +35,7 @@
       @include font-style(huge);
       display: flex;
       flex-direction: row;
-      overflow-x: hidden;
+      overflow: hidden;
       position: relative;
       width: 100%;
 
