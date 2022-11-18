@@ -6,11 +6,13 @@ import classnames from 'classnames';
 import debounce from 'lodash.debounce';
 import { setActiveSlide } from '../../redux/reducers/slider';
 import styles from './Slider.module.scss';
+import useSwipe from '../../hooks/useSwipe';
 
 const SCROLL_THRESHOLD = 1;
 
 function Slider({ projects }) {
   const dispatch = useDispatch();
+  const { direction } = useSwipe();
   const { activeSlide, slideCount } = useSelector((state) => state.slider);
 
   const nextSlide = useCallback(() => {
@@ -32,6 +34,14 @@ function Slider({ projects }) {
       prevSlide();
     }
   }, 50);
+
+  useEffect(() => {
+    if (direction.y === 'up') {
+      nextSlide();
+    } else if (direction.y === 'down') {
+      prevSlide();
+    }
+  }, [direction]);
 
   useEffect(() => {
     window.addEventListener('wheel', onwheel);

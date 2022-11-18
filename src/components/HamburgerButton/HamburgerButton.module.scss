@@ -10,22 +10,24 @@
   height: px(20);
   justify-content: space-evenly;
   outline: none;
-  width: 100%;
+  width: px(20);
   z-index: $zindex-menu;
+
+  @include layout('tablet') {
+    width: px(30);
+  }
 
   &.isOpen {
     .bar {
-      transition: all 2s ease;
-
       &.top {
-        transform: rotate(45deg) translateX(2px);
+        transform: rotate(45deg) translateY(150%);
       }
       &.middle {
         opacity: 0;
         transform: translateX(100%);
       }
       &.bottom {
-        transform: rotate(-45deg) translateX(2px);
+        transform: rotate(-45deg) translateY(-150%);
       }
     }
   }
@@ -33,7 +35,9 @@
   .bar {
     background-color: $dark-gray;
     height: px(2.5);
+    max-width: 100%;
+    transform-origin: 33.333% 50%;
+    transition: all 0.5s ease;
     width: px(35);
-    transform-origin: left;
   }
 }
