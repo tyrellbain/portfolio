@@ -62,7 +62,7 @@ function About() {
             </div>
             <div className={classnames(styles.contact)}>
               <h3 className={classnames(styles.subheading)}>Contact</h3>
-              <p>contact@tyrellbain.com</p>
+              <p>tyrellbaindev@gmail.com</p>
             </div>
           </div>
         </div>
