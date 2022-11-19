@@ -32,17 +32,17 @@ function About() {
         <div className={classnames(styles.content)}>
           <div className={classnames(styles.section, styles.aboutWork)}>
             <p className={classnames(styles.section)}>
-              Hey, I’m Tyrell, a full stack web developer with a solid background in computer science and languages such
-              as PHP and React. Currently I work for Jam3, an award-winning digital design and experience agency based
-              in Toronto.
+              Hey, I’m Tyrell, a Toronto-based Tech Lead with a solid background in computer science and languages such
+              as PHP, React, Python, Node, Typescript, Flow and Hacklang.
             </p>
             <p className={classnames(styles.section)}>
-              For the past five years, I've worked as a development lead on various projects for global brands such as
-              Facebook, Oculus and a diverse list of clients. As a certified scrum master, I enjoy collaborating with a
-              team of talented designers and developers to take complex ideas from concept to production online.
+              For the past seven years, I've worked as a development lead at companies such as Jam3 and Properly on
+              projects for global brands like Facebook, Oculus and a diverse list of clients. As a certified scrum
+              master, I really enjoy collaborating with a team of talented designers and developers to take complex
+              ideas from concept to production online.
             </p>
             <p className={classnames(styles.section)}>
-              When I'm not coding, I enjoy cycling and making my own beer and hot sauce.
+              When I'm not coding, I spend my time cycling or making my own beer and hot sauce.
             </p>
           </div>
           <div className={classnames(styles.section, styles.aboutLists)}>
